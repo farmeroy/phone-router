@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 load_dotenv()  
 
 TARGET_PHONE_NUMBER = os.getenv('TARGET_PHONE_NUMBER')
+account_sid = os.getenv('TWILIO_ACCOUNT_SID')    
+auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 
 app = Flask(__name__)
 
@@ -15,6 +17,3 @@ def call():
 
     return str(response)
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
